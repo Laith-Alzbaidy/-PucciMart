@@ -1,0 +1,132 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Simba",
+      "description": "The Maine Coon is a large and sociable cat breed known for its tufted ears, bushy tail, and impressive size. They are friendly, intelligent, and make great companions.",
+      "image": "https://thumbs.dreamstime.com/b/maine-coon-cats-portrait-purebred-white-background-37444736.jpg",
+      "price": 1000,
+      "offer": "200 off",
+      "brand": "CoonCats"
+    },
+    {
+      "id": 2,
+      "name": "Luna",
+      "description": "Siamese cats are known for their striking blue almond-shaped eyes and sleek coats. They are affectionate, vocal, and enjoy interacting with their owners.",
+      "image": "https://www.purina.co.uk/sites/default/files/2022-06/Siamese-Cat_0.jpg?itok=Qy1J6ZDS",
+      "price": 700,
+      "offer": "100 off",
+      "brand": "Siameez"
+    },
+    {
+      "id": 3,
+      "name": "Fluffy",
+      "description": "Persian cats are characterized by their long and luxurious coats, round faces, and gentle personalities. They are calm, loving, and enjoy a relaxed indoor lifestyle.",
+      "image": "https://previews.123rf.com/images/isselee/isselee1810/isselee181001096/110611095-persian-kitten-4-months-old-with-paw-up-in-front-of-white-background.jpg",
+      "price": 1200,
+      "offer": "300 off",
+      "brand": "PersianPaws"
+    },
+    {
+      "id": 4,
+      "name": "Leo",
+      "description": "Bengal cats have a distinctive coat pattern that resembles that of a leopard. They are active, playful, and require plenty of mental and physical stimulation.",
+      "image": "https://i.pinimg.com/736x/92/e2/5a/92e25a4bf8c6952b69b79f7815893ec1.jpg",
+      "price": 800,
+      "offer": "200 off",
+      "brand": "BengalKings"
+    },
+    {
+      "id": 5,
+      "name": "Milo",
+      "description": "Ragdoll cats are known for their affectionate and gentle nature. They have striking blue eyes and semi-long fur that is soft to the touch. Ragdolls are great companions for both individuals and families.",
+      "image": "https://static.wixstatic.com/media/56e0ec_2460af96c0994ecc9ee84a7fd9a90bdd~mv2.jpg/v1/fill/w_640,h_556,fp_0.49_0.57,q_80,usm_0.66_1.00_0.01,enc_auto/56e0ec_2460af96c0994ecc9ee84a7fd9a90bdd~mv2.jpg",
+      "price": 900,
+      "offer": "150 off",
+      "brand": "RagdollsRUs"
+    },
+    {
+      "id": 6,
+      "name": "Oliver",
+      "description": "Scottish Fold cats are known for their unique folded ears, which give them an adorable appearance. They are gentle, friendly, and get along well with other pets.",
+      "image": "https://cats.com/wp-content/uploads/2020/10/Scottish-Fold-Cat-compressed.jpg",
+      "price": 700,
+      "offer": "100 off",
+      "brand": "FoldedWhiskers"
+    },
+    {
+      "id": 7,
+      "name": "Max",
+      "description": "The Golden Retriever is a friendly, intelligent, and obedient dog breed. They are known for their beautiful golden coats, gentle nature, and loyalty.",
+      "image": "https://d.newsweek.com/en/full/2028414/pair-golden-retrievers.png?w=1600&h=1600&q=88&f=0b8a59469376dda481280124fa043ccc",
+      "price": 1000,
+      "offer": "200 off",
+      "brand": "RetrieverLovers"
+    },
+    {
+      "id": 8,
+      "name": "Bella",
+      "description": "The German Shepherd is a courageous and versatile dog breed. They are highly intelligent, protective, and often used as working dogs in various roles.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtrt-TdHqRZarsN4unLltQ10iJg2huOodh7Ny-U_jtXXdNWXqSG_6OvNfUIu67CmCdF78&usqp=CAU",
+      "price": 800,
+      "offer": "100 off",
+      "brand": "ShepherdPaws"
+    },
+    {
+      "id": 9,
+      "name": "Charlie",
+      "description": "The Labrador Retriever is a friendly and outgoing dog breed. They are known for their playful nature, intelligence, and their ability to be great family pets.",
+      "image": "https://dogtime.com/wp-content/uploads/sites/12/2011/01/file_22988_labrador-retriever.jpg",
+      "price": 1200,
+      "offer": "300 off",
+      "brand": "LabradorLovers"
+    },
+    {
+      "id": 10,
+      "name": "Lucy",
+      "description": "The French Bulldog is a small and muscular dog breed with a charming and affectionate personality. They are known for their unique bat-like ears.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnblIkt3PZRK6X4mmWDfiA7t5hFNMKJsoomj3i7grwKWoy9XFk9QlklMpQjWgW-B09oJo&usqp=CAU",
+      "price": 1500,
+      "offer": "200 off",
+      "brand": "FrenchieFriends"
+    },
+    {
+      "id": 11,
+      "name": "Cooper",
+      "description": "The Pembroke Welsh Corgi is a small and intelligent dog breed. They are known for their short legs, long bodies, and friendly personalities.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxjycL76cc_UCQc_CDuJNofTJN6DodXzEUpw&usqp=CAU",
+      "price": 900,
+      "offer": "150 off",
+      "brand": "CorgiCuddles"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "samer@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "username": "samer",
+      "gender": "Male",
+      "phone": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "posts": []
+    },
+    {
+      "email": "amer@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "username": "amer",
+      "gender": "Male",
+      "phone": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "posts": [],
+      "id": 2
+    }
+  ],
+  "AllPost": []
+}

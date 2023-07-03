@@ -1,0 +1,86 @@
+.img-product {
+  width: 100%;
+  height: 292px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 290px));
+  justify-content: center;
+  gap: 20px;
+
+
+}
+
+.Title-section-product {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  text-align: center;
+  box-shadow: 0px 1px 2px 0px gray;
+}
+
+
+.card h3,
+.card p {
+  margin: 4px;
+}
+
+
+.card span {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.Post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60vw;
+  border: 1px solid black;
+  padding: 0 20px;
+}
+
+.btn-All-Product {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.btn-All-Product button {
+  background-color: var(--btn-pg);
+  width: 198px;
+  height: 47px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+
+.ProductsAll {
+  margin-top: 70px;
+}
+
+.ContentCardProduct {
+  padding: 10px 0 0 0px;
+}
+
+
+
+.Details-product {
+  width: 100%;
+  height: 30px;
+  border: none;
+  background-color: var(--btn-pg);
+  margin-top: 5px;
+  cursor: pointer;
+}

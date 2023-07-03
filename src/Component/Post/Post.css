@@ -1,0 +1,335 @@
+::selection {
+  color: #fff;
+  background: #1a81ff;
+}
+
+.container {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  transition: height 0.2s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.post {
+  box-shadow: 0px 0px 5px 1px gray;
+  padding: 21px;
+}
+
+.container.active {
+  height: 590px;
+}
+
+.wrapper {
+  margin: 50px 0;
+}
+
+.container .wrapper section {
+  width: 500px;
+  background: #fff;
+  margin: auto;
+}
+
+.container img {
+  cursor: pointer;
+}
+
+.container .post {
+  transition: margin-left 0.18s ease;
+}
+
+.container.active .post {
+  margin-left: -500px;
+}
+
+.post .TitlePostHeaader {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 17px 0;
+  text-align: center;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.post header::after {
+  display: none;
+}
+
+
+.post form {
+  margin-top: 15px;
+}
+
+.content h2 {
+  margin: 0;
+}
+
+.options p {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post form .content,
+.audience .list li .column {
+  display: flex;
+  align-items: center;
+}
+
+.post form .content img {
+  cursor: default;
+  max-width: 52px;
+}
+
+.post form .content .details {
+  margin: -3px 0 0 12px;
+}
+
+form .content .details p {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.content .details .privacy {
+  display: flex;
+  height: 25px;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 11px;
+  margin-top: 3px;
+  border-radius: 5px;
+  align-items: center;
+  max-width: 98px;
+  background: #E4E6EB;
+  justify-content: space-between;
+}
+
+.details .privacy span {
+  font-size: 13px;
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+.details .privacy i:last-child {
+  font-size: 13px;
+  margin-left: 1px;
+}
+
+form :where(textarea, button) {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+form textarea {
+  resize: none;
+  font-size: 18px;
+  margin-top: 30px;
+  min-height: 100px;
+}
+
+form textarea::placeholder {
+  color: #858585;
+}
+
+form textarea:focus::placeholder {
+  color: #b3b3b3;
+}
+
+form :where(.theme-emoji, .options) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-emoji img:last-child {
+  max-width: 24px;
+}
+
+form .options {
+  height: 57px;
+  margin: 15px 0;
+  padding: 0 15px;
+  border-radius: 7px;
+  border: 1px solid #B9B9B9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form .options :where(.list, li),
+.audience :where(.arrow-back, .icon, li .radio) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form .options p {
+  color: #595959;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: default;
+}
+
+form .options .list {
+  list-style: none;
+}
+
+.options .list li {
+  height: 42px;
+  width: 42px;
+  margin: 0 -1px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.options .list li:hover {
+  background: #f0f1f4;
+}
+
+.options .list li img {
+  width: 23px;
+}
+
+form button {
+  height: 53px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #BCC0C4;
+  cursor: no-drop;
+  border-radius: 7px;
+  background: #e2e5e9;
+  transition: all 0.3s ease;
+}
+
+form textarea:valid~button {
+  color: #fff;
+  cursor: pointer;
+  background: #4599FF;
+}
+
+form textarea:valid~button:hover {
+  background: #1a81ff;
+}
+
+.container .audience {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.container.active .audience {
+  opacity: 1;
+}
+
+.audience header {
+  padding: 17px 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.audience header .arrow-back {
+  position: absolute;
+  left: 25px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #747474;
+  border-radius: 50%;
+  background: #E4E6EB;
+}
+
+.list li .column .details p {
+  font-weight: 500;
+}
+
+.list li .column .details span {
+  font-size: 14px;
+  color: #65676B;
+}
+
+.list li .radio {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid #707070;
+}
+
+.list li.active .radio {
+  border: 2px solid #4599FF;
+}
+
+.list li .radio::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: inherit;
+}
+
+.post-box {
+  margin-top: 20px;
+}
+
+.post-item {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 40px 0;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.CommentValue input {
+  padding: 10px 5px;
+  width: 80%;
+  border: 1px black solid;
+  overflow: hidden;
+}
+
+.post-content>div {
+  display: flex;
+  align-items: center;
+}
+
+.post-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-content img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-content h2 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.post-item p {
+  margin: 10px 0;
+}
+
+.post-item span {
+  font-size: 12px;
+  color: gray;
+}
+
+.CommentValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.CommentValue button {
+  width: 15%;
+  height: 38px;
+
+}

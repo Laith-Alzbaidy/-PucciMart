@@ -1,0 +1,17 @@
+.card-Details {
+  max-width: 700px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  margin: auto;
+  margin-top: 40px;
+  box-shadow: 0px 0px 5px 0 gray;
+  padding: 25px;
+}
+
+.card-Details span {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 23px;
+}

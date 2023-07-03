@@ -1,0 +1,26 @@
+.Content-card-services img {
+  width: 76px;
+  height: 64px;
+}
+
+.Content-card-services {
+  display: flex;
+  background: linear-gradient(to right, rgba(7, 160, 129, 40%), white);
+  width: 230px;
+  height: 100px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.Cards-services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.title-services {
+  text-align: center;
+}

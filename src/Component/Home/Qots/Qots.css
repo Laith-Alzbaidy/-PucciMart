@@ -1,0 +1,21 @@
+.bg-section-qots {
+  background-image: url("../../../Imges/line.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Content-outs {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.Content-outs button {
+  background-color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+}

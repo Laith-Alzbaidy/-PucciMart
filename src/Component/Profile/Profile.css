@@ -1,0 +1,69 @@
+.profile {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Form-profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 200px));
+  gap: 20px;
+  width: 50vw;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.Field-profile {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+
+.Field-profile input {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(122, 126, 134, 0.1);
+  border: 1px solid rgba(122, 126, 134, 0.1);
+  border-radius: 4px;
+  padding: 0 5px;
+  margin-top: 3px;
+}
+
+
+.OperationProfileFedback button {
+  background-color: var(--btn-pg);
+  width: 100px;
+  height: 25px;
+  border: none;
+  margin-right: 5px;
+}
+
+.Comment {
+  overflow-x: auto;
+  width: 40vw;
+  scrollbar-width: 10px;
+}
+
+.Comment {
+  overflow-x: auto;
+  width: 40vw;
+  scrollbar-width: 10px;
+}
+
+.Comment::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.Comment {
+  overflow: auto;
+  width: 40vw;
+}
+
+.Comment p {
+  width: max-content;
+}
