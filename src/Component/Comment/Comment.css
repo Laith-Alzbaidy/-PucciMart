@@ -4,3 +4,7 @@
   width: 700px;
   margin-top: 20px;
 }
+
+.ui.comments .comment>.avatar~.content {
+  margin: 40px;
+}

@@ -12,7 +12,7 @@ function Landingpage() {
       <About />
       <Products />
       <Qotes />
-      <Feedback />
+      {/* <Feedback /> */}
     </>
   );
 }

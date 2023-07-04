@@ -112,7 +112,57 @@
       "firstname": "",
       "lastname": "",
       "address": "",
-      "posts": []
+      "posts": [
+        {
+          "content": "amer1\n",
+          "date": "Jul, 01:24 AM",
+          "name": "amer",
+          "comment": [],
+          "id": 1
+        },
+        {
+          "content": "amer2",
+          "date": "Jul, 01:24 AM",
+          "name": "amer",
+          "comment": [],
+          "id": 2
+        },
+        {
+          "content": "amer4\n",
+          "date": "Jul, 02:53 AM",
+          "name": "amer",
+          "comment": [],
+          "id": 3
+        },
+        {
+          "content": "i am samer",
+          "date": "Jul, 02:54 AM",
+          "name": "samer",
+          "comment": [],
+          "id": 4
+        },
+        {
+          "content": "samerback",
+          "date": "Jul, 02:55 AM",
+          "name": "samer",
+          "comment": [],
+          "id": 5
+        },
+        {
+          "content": "asdasd",
+          "date": "Jul, 03:28 AM",
+          "name": "samer",
+          "comment": [],
+          "id": 6
+        },
+        {
+          "content": "a",
+          "date": "Jul, 03:49 AM",
+          "name": "samer",
+          "comment": [],
+          "id": 7
+        }
+      ]
     },
     {
       "email": "amer@gmail.com",
@@ -124,9 +174,188 @@
       "firstname": "",
       "lastname": "",
       "address": "",
-      "posts": [],
+      "posts": [
+        {
+          "content": "amer1\n",
+          "date": "Jul, 01:24 AM",
+          "name": "amer",
+          "comment": []
+        },
+        {
+          "content": "amer2",
+          "date": "Jul, 01:24 AM",
+          "name": "amer",
+          "comment": []
+        },
+        {
+          "content": "amer4\n",
+          "date": "Jul, 02:53 AM",
+          "name": "amer",
+          "comment": []
+        },
+        {
+          "content": "asdd",
+          "date": "Jul, 11:01 AM",
+          "name": "amer",
+          "comment": []
+        }
+      ],
       "id": 2
     }
   ],
-  "AllPost": []
+  "AllPost": [
+    {
+      "content": "amer1\n",
+      "date": "Jul, 01:24 AM",
+      "name": "amer",
+      "comment": [
+        {
+          "user": "samer",
+          "content": "aaa"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "0": {
+        "content": "amer1\n",
+        "date": "Jul, 01:24 AM",
+        "name": "amer",
+        "comment": [
+          {
+            "user": "samer",
+            "content": "aaa"
+          }
+        ],
+        "id": 1
+      },
+      "1": {
+        "content": "",
+        "date": "Jul, 01:24 AM",
+        "name": "amer",
+        "comment": [
+          {
+            "user": "samer",
+            "content": "aaaaaaaaa"
+          }
+        ],
+        "id": 2
+      },
+      "2": {
+        "content": "amer4\n",
+        "date": "Jul, 02:53 AM",
+        "name": "amer",
+        "comment": [],
+        "id": 3
+      },
+      "3": {
+        "content": "i am samer",
+        "date": "Jul, 02:54 AM",
+        "name": "samer",
+        "comment": [
+          {
+            "user": "samer",
+            "content": "cccccccc"
+          }
+        ],
+        "id": 4,
+        "comments": [
+          {
+            "content": "aaaaaaaa"
+          },
+          {
+            "content": "ddd"
+          }
+        ]
+      },
+      "4": {
+        "content": "samerback",
+        "date": "Jul, 02:55 AM",
+        "name": "samer",
+        "comment": [],
+        "id": 5
+      },
+      "5": {
+        "content": "asdasd",
+        "date": "Jul, 03:28 AM",
+        "name": "samer",
+        "comment": {
+          "user": "samer",
+          "content": "ahmad"
+        },
+        "id": 6
+      },
+      "6": {
+        "content": "a",
+        "date": "Jul, 03:49 AM",
+        "name": "samer",
+        "comment": [],
+        "id": 7
+      },
+      "id": 2
+    },
+    {
+      "content": "amer4\n",
+      "date": "Jul, 02:53 AM",
+      "name": "amer",
+      "comment": [],
+      "id": 3
+    },
+    {
+      "content": "i am samer",
+      "date": "Jul, 02:54 AM",
+      "name": "samer",
+      "comment": [
+        {
+          "user": "samer",
+          "content": "cccccccc"
+        }
+      ],
+      "id": 4,
+      "comments": [
+        {
+          "content": "aaaaaaaa"
+        },
+        {
+          "content": "ddd"
+        }
+      ]
+    },
+    {
+      "content": "samerback",
+      "date": "Jul, 02:55 AM",
+      "name": "samer",
+      "comment": [],
+      "id": 5
+    },
+    {
+      "content": "asdasd",
+      "date": "Jul, 03:28 AM",
+      "name": "samer",
+      "comment": {
+        "user": "samer",
+        "content": "ahmad"
+      },
+      "id": 6
+    },
+    {
+      "content": "a",
+      "date": "Jul, 03:49 AM",
+      "name": "samer",
+      "comment": [
+        {
+          "user": "amer",
+          "content": "aasdasd"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "content": "asdd",
+      "date": "Jul, 11:01 AM",
+      "name": "amer",
+      "comment": [],
+      "id": 8
+    }
+  ]
 }

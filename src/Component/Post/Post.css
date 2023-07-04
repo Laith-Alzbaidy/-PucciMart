@@ -21,7 +21,7 @@
 }
 
 .wrapper {
-  margin: 50px 0;
+  padding: 50px;
 }
 
 .container .wrapper section {
@@ -272,7 +272,10 @@ form textarea:valid~button:hover {
 }
 
 .post-box {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .post-item {

@@ -32,3 +32,56 @@ code {
   --hover: rgb(7, 160, 129);
   --p: rgb(64, 65, 70);
 }
+
+
+
+
+
+
+
+@media (max-width : 840px) {
+  nav {
+    display: none;
+  }
+
+  .img-left-hero {
+    display: none;
+  }
+
+  .post-item {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 75% !important;
+    margin: 0 !important;
+  }
+}
+
+
+@media (max-width : 1160px) {
+  .section-left {
+    display: none;
+  }
+
+  .section-right {
+    grid-row: 2;
+    grid-column: 3/11 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+}
+
+
+
+@media(max-width : 700px) {
+  .container .wrapper section {
+    width: 90vw !important;
+    background: #fff;
+    /* margin: auto; */
+  }
+}
+
+@media(max-width : 450px) {
+  .content-hero h1 {
+    font-size: 1.5em !important;
+  }
+}
