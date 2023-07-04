@@ -5,17 +5,22 @@ import axios from "axios";
 import Comment from "../Comment/Comment";
 
 function Post() {
+  // Accessing the GetCurentId function from the Context
   const { GetCurentId } = useContext(Context);
+  // Getting the current user ID
   const userId = GetCurentId();
-  const [showInputPost, setShowInputPost] = useState(""); // Updated to store post ID
-  const [contentPost, setContentPost] = useState("");
-  const [currentUser, setCurrentUser] = useState({});
-  const [postList, setPostList] = useState([]);
-  const [AllPost, setAllPost] = useState([]);
-  const [updatenewPost, setnewUpdatePost] = useState("");
-  const [comment, setComment] = useState("");
+  // State variables
+  const [showInputPost, setShowInputPost] = useState(""); // State for showing input post
+  const [contentPost, setContentPost] = useState(""); // State for post content
+  const [currentUser, setCurrentUser] = useState({}); // State for current user
+  const [postList, setPostList] = useState([]); // State for user's posts
+  const [AllPost, setAllPost] = useState([]); // State for all posts
+  const [updatenewPost, setnewUpdatePost] = useState(""); // State for updated post content
+  const [comment, setComment] = useState(""); // State for comment content
+  const [Allcomment, setAllComment] = useState([]); // State for all comments
 
   useEffect(() => {
+    // Fetch user data if the user ID is valid
     if (userId >= 1) {
       getUser();
     }
@@ -28,12 +33,14 @@ function Post() {
   });
 
   const getAllPosts = () => {
+    // Fetch all posts from the server
     axios.get("http://localhost:9000/AllPost").then((response) => {
       setAllPost(response.data);
     });
   };
 
   const getUser = () => {
+    // Fetch user data based on the user ID
     axios.get(`http://localhost:9000/Users/${userId}`).then((response) => {
       setCurrentUser(response.data);
       setPostList(response.data.posts);
@@ -41,6 +48,7 @@ function Post() {
   };
 
   const sendPost = () => {
+    // Create a new post object
     const newPost = {
       content: contentPost,
       date: currenttime,
@@ -48,9 +56,11 @@ function Post() {
       comment: [],
     };
 
+    // Update the user's posts with the new post
     const updatedPosts = [...postList, newPost];
     setPostList(updatedPosts);
 
+    // Update the user's posts on the server
     axios
       .put(`http://localhost:9000/Users/${userId}`, {
         ...currentUser,
@@ -60,15 +70,18 @@ function Post() {
         console.log(response.data);
       });
 
+    // Add the new post to the server's all posts
     axios.post("http://localhost:9000/AllPost", newPost).then((response) => {
       console.log(response.data);
       getAllPosts();
     });
 
+    // Clear the post content
     setContentPost("");
   };
 
   const handleContentPostChange = (event) => {
+    // Update the post content as the user types
     setContentPost(event.target.value);
   };
 
@@ -78,16 +91,19 @@ function Post() {
   };
 
   useEffect(() => {
+    // Fetch all posts when the component mounts
     getAllPosts();
   }, []);
 
   const Delete = (id) => {
+    // Remove the post from the server's all posts
     const updatedPosts = AllPost.filter((item) => item.id !== id);
 
-    axios.delete(`http://localhost:9000/AllPost/${id}`).then((respons) => {
-      console.log(respons.data);
+    axios.delete(`http://localhost:9000/AllPost/${id}`).then((response) => {
+      console.log(response.data);
     });
 
+    // Update the user's posts without the deleted post
     axios.put(`http://localhost:9000/Users/${userId}`, {
       ...currentUser,
       posts: updatedPosts,
@@ -96,38 +112,48 @@ function Post() {
   };
 
   const getValuePost = (event) => {
+    // Update the new post content when editing
     const value = event.target.value;
     setnewUpdatePost(value);
   };
 
   const show = (id) => {
-    setShowInputPost(id); // Set the ID of the post being edited
+    // Show the input field for editing a post
+    setShowInputPost(id);
   };
 
   const getVcomment = (event) => {
+    // Update the comment content as the user types
     const value = event.target.value;
     setComment(value);
   };
 
   const AddComment = (id) => {
+    // Create a new comment object
     const newComment = { user: currentUser.username, content: comment };
 
+    // Fetch the post data to add the comment
     axios.get(`http://localhost:9000/AllPost/${id}`).then((response) => {
+      // Update the post with the new comment
+      const updatedPost = {
+        ...response.data,
+        comment: [...response.data.comment, newComment],
+      };
+
+      // Update the post on the server
       axios
-        .put(`http://localhost:9000/AllPost/${id}`, {
-          ...response.data,
-          comment: [...response.data.comment, newComment],
-        })
+        .put(`http://localhost:9000/AllPost/${id}`, updatedPost)
         .then((response) => {
-          console.log("dataComment", response.data);
+          console.log("dataComment", response.data.comment);
+          setAllComment(response.data.comment);
           getAllPosts();
         });
     });
-
     setComment("");
   };
 
   const Edit = (id, newContent) => {
+    // Update the post content when editing
     const updatedAllPost = AllPost.map((post) => {
       if (post.id === id) {
         return { ...post, content: newContent };
@@ -137,6 +163,7 @@ function Post() {
 
     setAllPost(updatedAllPost);
 
+    // Update the post on the server
     axios
       .put(`http://localhost:9000/AllPost/${id}`, {
         ...AllPost.find((post) => post.id === id),
@@ -146,7 +173,7 @@ function Post() {
         console.log(response.data);
       });
 
-    setShowInputPost(""); // Reset the edited post ID to hide the input field
+    setShowInputPost("");
   };
 
   return (
@@ -199,7 +226,7 @@ function Post() {
                   <>
                     <button onClick={() => Delete(post.id)}>Delete</button>
                     <button onClick={() => show(post.id)}>Edit</button>
-                    {showInputPost === post.id && ( // Display the input field only for the post being edited
+                    {showInputPost === post.id && (
                       <>
                         <input type="text" onChange={getValuePost} />
                         <button onClick={() => Edit(post.id, updatenewPost)}>
@@ -215,9 +242,15 @@ function Post() {
                 </div>
               </div>
               <p>{post.content}</p>
-              <div>
-                <Comment />
-              </div>
+              <br />
+              <br />
+              {post.comment.map((comment) => {
+                return (
+                  <>
+                    <Comment content={comment.content} name={comment.user} />
+                  </>
+                );
+              })}
               <div className="CommentValue">
                 <input
                   type="text"

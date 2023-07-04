@@ -1,10 +1,5 @@
 .ui.comments {
   font-size: 1rem;
   margin: auto;
-  width: 700px;
   margin-top: 20px;
-}
-
-.ui.comments .comment>.avatar~.content {
-  margin: 40px;
 }

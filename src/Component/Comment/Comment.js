@@ -1,24 +1,27 @@
 import "./Comment.css";
 
-function Comment() {
+function Comment({ content, name }) {
   return (
     <div className="ui comments">
-      {/* <h3 className="ui dividing header">Comments</h3>
+      <h3 className="ui dividing header">Comments</h3>
       <div className="comment">
         <a className="avatar">
-          <img src="/images/avatar/small/matt.jpg" alt="Matt's Avatar" />
+          <img
+            src="https://img.freepik.com/free-icon/user_318-159711.jpg"
+            alt="logo"
+          />
         </a>
         <div className="content">
-          <a className="author">Matt</a>
+          <a className="author">{name}</a>
           <div className="metadata">
             <span className="date">Today at 5:42PM</span>
           </div>
-          <div className="text">How artistic!</div>
+          <div className="text">{content}</div>
           <div className="actions">
             <a className="reply">Reply</a>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

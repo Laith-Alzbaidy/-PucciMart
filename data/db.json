@@ -102,11 +102,10 @@
   ],
   "users": [
     {
-      "id": 1,
-      "email": "samer@gmail.com",
-      "password": "123",
-      "confirmpassword": "123",
-      "username": "samer",
+      "email": "Ahmad@gmail.com",
+      "password": "Ahmad@gmail.com",
+      "confirmpassword": "Ahmad@gmail.com",
+      "username": "Ahmad@gmail.com",
       "gender": "Male",
       "phone": "",
       "firstname": "",
@@ -114,248 +113,126 @@
       "address": "",
       "posts": [
         {
-          "content": "amer1\n",
-          "date": "Jul, 01:24 AM",
-          "name": "amer",
-          "comment": [],
-          "id": 1
-        },
-        {
-          "content": "amer2",
-          "date": "Jul, 01:24 AM",
-          "name": "amer",
-          "comment": [],
-          "id": 2
-        },
-        {
-          "content": "amer4\n",
-          "date": "Jul, 02:53 AM",
-          "name": "amer",
-          "comment": [],
-          "id": 3
-        },
-        {
-          "content": "i am samer",
-          "date": "Jul, 02:54 AM",
-          "name": "samer",
-          "comment": [],
-          "id": 4
-        },
-        {
-          "content": "samerback",
-          "date": "Jul, 02:55 AM",
-          "name": "samer",
-          "comment": [],
-          "id": 5
-        },
-        {
-          "content": "asdasd",
-          "date": "Jul, 03:28 AM",
-          "name": "samer",
-          "comment": [],
-          "id": 6
-        },
-        {
-          "content": "a",
-          "date": "Jul, 03:49 AM",
-          "name": "samer",
-          "comment": [],
-          "id": 7
-        }
-      ]
-    },
-    {
-      "email": "amer@gmail.com",
-      "password": "123",
-      "confirmpassword": "123",
-      "username": "amer",
-      "gender": "Male",
-      "phone": "",
-      "firstname": "",
-      "lastname": "",
-      "address": "",
-      "posts": [
-        {
-          "content": "amer1\n",
-          "date": "Jul, 01:24 AM",
-          "name": "amer",
-          "comment": []
-        },
-        {
-          "content": "amer2",
-          "date": "Jul, 01:24 AM",
-          "name": "amer",
-          "comment": []
-        },
-        {
-          "content": "amer4\n",
-          "date": "Jul, 02:53 AM",
-          "name": "amer",
-          "comment": []
-        },
-        {
-          "content": "asdd",
-          "date": "Jul, 11:01 AM",
-          "name": "amer",
-          "comment": []
-        }
-      ],
-      "id": 2
-    }
-  ],
-  "AllPost": [
-    {
-      "content": "amer1\n",
-      "date": "Jul, 01:24 AM",
-      "name": "amer",
-      "comment": [
-        {
-          "user": "samer",
-          "content": "aaa"
+          "comments": []
         }
       ],
       "id": 1
     },
     {
-      "0": {
-        "content": "amer1\n",
-        "date": "Jul, 01:24 AM",
-        "name": "amer",
-        "comment": [
-          {
-            "user": "samer",
-            "content": "aaa"
-          }
-        ],
-        "id": 1
-      },
-      "1": {
-        "content": "",
-        "date": "Jul, 01:24 AM",
-        "name": "amer",
-        "comment": [
-          {
-            "user": "samer",
-            "content": "aaaaaaaaa"
-          }
-        ],
-        "id": 2
-      },
-      "2": {
-        "content": "amer4\n",
-        "date": "Jul, 02:53 AM",
-        "name": "amer",
-        "comment": [],
-        "id": 3
-      },
-      "3": {
-        "content": "i am samer",
-        "date": "Jul, 02:54 AM",
-        "name": "samer",
-        "comment": [
-          {
-            "user": "samer",
-            "content": "cccccccc"
-          }
-        ],
-        "id": 4,
-        "comments": [
-          {
-            "content": "aaaaaaaa"
-          },
-          {
-            "content": "ddd"
-          }
-        ]
-      },
-      "4": {
-        "content": "samerback",
-        "date": "Jul, 02:55 AM",
-        "name": "samer",
-        "comment": [],
-        "id": 5
-      },
-      "5": {
-        "content": "asdasd",
-        "date": "Jul, 03:28 AM",
-        "name": "samer",
-        "comment": {
-          "user": "samer",
-          "content": "ahmad"
+      "email": "Mohammad@gmail.com",
+      "password": "Mohammad@gmail.com",
+      "confirmpassword": "Mohammad@gmail.com",
+      "username": "Mohammad@gmail.com",
+      "gender": "Male",
+      "phone": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "posts": [
+        {
+          "comments": []
         },
-        "id": 6
-      },
-      "6": {
-        "content": "a",
-        "date": "Jul, 03:49 AM",
-        "name": "samer",
-        "comment": [],
-        "id": 7
-      },
+        {
+          "content": "Mohammad@gmail.com",
+          "date": "Jul, 01:19 PM",
+          "name": "Mohammad@gmail.com",
+          "comment": []
+        },
+        {
+          "content": "Mohammad@gmail.com",
+          "date": "Jul, 01:20 PM",
+          "name": "Mohammad@gmail.com",
+          "comment": []
+        }
+      ],
       "id": 2
     },
     {
-      "content": "amer4\n",
-      "date": "Jul, 02:53 AM",
-      "name": "amer",
-      "comment": [],
+      "email": "ahmad@gmail.com",
+      "password": "ahmadBASSAM12#",
+      "confirmpassword": "ahmadBASSAM12#",
+      "username": "ahmad@gmail.com",
+      "gender": "Male",
+      "phone": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "posts": [
+        {
+          "comments": []
+        }
+      ],
       "id": 3
     },
     {
-      "content": "i am samer",
-      "date": "Jul, 02:54 AM",
-      "name": "samer",
-      "comment": [
+      "email": "aahmad@ahmad.com",
+      "password": "ahmadBASSAM12#",
+      "confirmpassword": "ahmadBASSAM12#",
+      "username": "aahmad@ahmad.com",
+      "gender": "Male",
+      "phone": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "posts": [
         {
-          "user": "samer",
-          "content": "cccccccc"
+          "comments": []
         }
       ],
-      "id": 4,
-      "comments": [
+      "id": 4
+    },
+    {
+      "email": "laithalzbaidy@gmail.com",
+      "password": "113920900Qq123@@",
+      "confirmpassword": "113920900Qq123@@",
+      "username": "laythAlzbaidy",
+      "gender": "Female",
+      "phone": "",
+      "firstname": "",
+      "lastname": "",
+      "address": "",
+      "posts": [
         {
-          "content": "aaaaaaaa"
+          "content": "Mohammad@gmail.com",
+          "date": "Jul, 01:20 PM",
+          "name": "Mohammad@gmail.com",
+          "comment": [
+            {
+              "user": "Ahmad@gmail.com",
+              "content": ""
+            }
+          ],
+          "id": 1
         },
         {
-          "content": "ddd"
-        }
-      ]
-    },
-    {
-      "content": "samerback",
-      "date": "Jul, 02:55 AM",
-      "name": "samer",
-      "comment": [],
-      "id": 5
-    },
-    {
-      "content": "asdasd",
-      "date": "Jul, 03:28 AM",
-      "name": "samer",
-      "comment": {
-        "user": "samer",
-        "content": "ahmad"
-      },
-      "id": 6
-    },
-    {
-      "content": "a",
-      "date": "Jul, 03:49 AM",
-      "name": "samer",
-      "comment": [
-        {
-          "user": "amer",
-          "content": "aasdasd"
+          "content": "thank you ",
+          "date": "Jul, 01:54 PM",
+          "name": "laythAlzbaidy",
+          "comment": []
         }
       ],
-      "id": 7
+      "id": 5
+    }
+  ],
+  "AllPost": [
+    {
+      "content": "Mohammad@gmail.com",
+      "date": "Jul, 01:20 PM",
+      "name": "Mohammad@gmail.com",
+      "comment": [
+        {
+          "user": "Ahmad@gmail.com",
+          "content": ""
+        }
+      ],
+      "id": 1
     },
     {
-      "content": "asdd",
-      "date": "Jul, 11:01 AM",
-      "name": "amer",
+      "content": "thank you ",
+      "date": "Jul, 01:54 PM",
+      "name": "laythAlzbaidy",
       "comment": [],
-      "id": 8
+      "id": 2
     }
   ]
 }
