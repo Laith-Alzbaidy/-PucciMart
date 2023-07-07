@@ -102,137 +102,19 @@
   ],
   "users": [
     {
-      "email": "Ahmad@gmail.com",
-      "password": "Ahmad@gmail.com",
-      "confirmpassword": "Ahmad@gmail.com",
-      "username": "Ahmad@gmail.com",
-      "gender": "Male",
-      "phone": "",
-      "firstname": "",
-      "lastname": "",
-      "address": "",
-      "posts": [
-        {
-          "comments": []
-        }
-      ],
-      "id": 1
-    },
-    {
-      "email": "Mohammad@gmail.com",
-      "password": "Mohammad@gmail.com",
-      "confirmpassword": "Mohammad@gmail.com",
-      "username": "Mohammad@gmail.com",
-      "gender": "Male",
-      "phone": "",
-      "firstname": "",
-      "lastname": "",
-      "address": "",
-      "posts": [
-        {
-          "comments": []
-        },
-        {
-          "content": "Mohammad@gmail.com",
-          "date": "Jul, 01:19 PM",
-          "name": "Mohammad@gmail.com",
-          "comment": []
-        },
-        {
-          "content": "Mohammad@gmail.com",
-          "date": "Jul, 01:20 PM",
-          "name": "Mohammad@gmail.com",
-          "comment": []
-        }
-      ],
-      "id": 2
-    },
-    {
-      "email": "ahmad@gmail.com",
-      "password": "ahmadBASSAM12#",
-      "confirmpassword": "ahmadBASSAM12#",
-      "username": "ahmad@gmail.com",
-      "gender": "Male",
-      "phone": "",
-      "firstname": "",
-      "lastname": "",
-      "address": "",
-      "posts": [
-        {
-          "comments": []
-        }
-      ],
-      "id": 3
-    },
-    {
-      "email": "aahmad@ahmad.com",
-      "password": "ahmadBASSAM12#",
-      "confirmpassword": "ahmadBASSAM12#",
-      "username": "aahmad@ahmad.com",
-      "gender": "Male",
-      "phone": "",
-      "firstname": "",
-      "lastname": "",
-      "address": "",
-      "posts": [
-        {
-          "comments": []
-        }
-      ],
-      "id": 4
-    },
-    {
+      "image": "https://img.freepik.com/premium-vector/businessman-profile-cartoon_18591-58479.jpg?w=2000",
       "email": "laithalzbaidy@gmail.com",
-      "password": "113920900Qq123@@",
-      "confirmpassword": "113920900Qq123@@",
-      "username": "laythAlzbaidy",
-      "gender": "Female",
+      "password": "113920900Qq1232@",
+      "confirmpassword": "113920900Qq1232@",
+      "username": "laythalzbaidy",
+      "gender": "Male",
       "phone": "",
       "firstname": "",
       "lastname": "",
       "address": "",
-      "posts": [
-        {
-          "content": "Mohammad@gmail.com",
-          "date": "Jul, 01:20 PM",
-          "name": "Mohammad@gmail.com",
-          "comment": [
-            {
-              "user": "Ahmad@gmail.com",
-              "content": ""
-            }
-          ],
-          "id": 1
-        },
-        {
-          "content": "thank you ",
-          "date": "Jul, 01:54 PM",
-          "name": "laythAlzbaidy",
-          "comment": []
-        }
-      ],
-      "id": 5
+      "posts": [],
+      "id": 1
     }
   ],
-  "AllPost": [
-    {
-      "content": "Mohammad@gmail.com",
-      "date": "Jul, 01:20 PM",
-      "name": "Mohammad@gmail.com",
-      "comment": [
-        {
-          "user": "Ahmad@gmail.com",
-          "content": ""
-        }
-      ],
-      "id": 1
-    },
-    {
-      "content": "thank you ",
-      "date": "Jul, 01:54 PM",
-      "name": "laythAlzbaidy",
-      "comment": [],
-      "id": 2
-    }
-  ]
+  "AllPost": []
 }

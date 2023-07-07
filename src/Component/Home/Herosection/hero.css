@@ -4,7 +4,7 @@
   justify-content: space-around;
   background-image: url("../../../Imges//herosection.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   height: 600px;
 }
@@ -24,6 +24,7 @@
 
 .content-hero {
   width: 500px;
+  margin-left: 15px;
 }
 
 .content-hero button {

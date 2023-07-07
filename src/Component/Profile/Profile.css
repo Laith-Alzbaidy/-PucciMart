@@ -7,13 +7,17 @@
   padding: 70px 0;
 }
 
+#file-input {
+  display: none;
+}
+
 .Form-profile {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 200px));
+  grid-template-columns: repeat(auto-fill, minmax(49vmin, 225px));
   gap: 20px;
-  width: 50vw;
   justify-content: space-around;
   gap: 30px;
+  width: 59vw;
 }
 
 .Field-profile {
@@ -67,4 +71,17 @@
 
 .Comment p {
   width: max-content;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
 }

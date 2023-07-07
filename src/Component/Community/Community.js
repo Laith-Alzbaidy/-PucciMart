@@ -4,7 +4,6 @@ function Community() {
   return (
     <>
       <Post />
-      <Comment />
     </>
   );
 }

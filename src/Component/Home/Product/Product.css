@@ -5,7 +5,7 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 320px));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
   justify-content: center;
   gap: 20px;
 }
@@ -85,4 +85,9 @@
   background-color: var(--btn-pg);
   margin-top: 5px;
   cursor: pointer;
+}
+
+
+.Products {
+  margin-top: 100px;
 }

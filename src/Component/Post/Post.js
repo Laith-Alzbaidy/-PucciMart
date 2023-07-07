@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Context from "../Context/Context";
 import axios from "axios";
 import Comment from "../Comment/Comment";
-
+import { BiSolidCommentAdd } from "react-icons/bi";
 function Post() {
   // Accessing the GetCurentId function from the Context
   const { GetCurentId } = useContext(Context);
@@ -24,7 +24,7 @@ function Post() {
     if (userId >= 1) {
       getUser();
     }
-  }, [userId]);
+  }, []);
 
   const currenttime = new Date().toLocaleString([], {
     hour: "2-digit",
@@ -50,6 +50,7 @@ function Post() {
   const sendPost = () => {
     // Create a new post object
     const newPost = {
+      image: currentUser.image,
       content: contentPost,
       date: currenttime,
       name: currentUser.username,
@@ -130,7 +131,11 @@ function Post() {
 
   const AddComment = (id) => {
     // Create a new comment object
-    const newComment = { user: currentUser.username, content: comment };
+    const newComment = {
+      user: currentUser.username,
+      content: comment,
+      image: currentUser.image,
+    };
 
     // Fetch the post data to add the comment
     axios.get(`http://localhost:9000/AllPost/${id}`).then((response) => {
@@ -163,7 +168,7 @@ function Post() {
 
     setAllPost(updatedAllPost);
 
-    // Update the post on the server
+    // Update the post on the serverNAMEF
     axios
       .put(`http://localhost:9000/AllPost/${id}`, {
         ...AllPost.find((post) => post.id === id),
@@ -182,13 +187,11 @@ function Post() {
         <section className="post">
           <header className="TitlePostHeaader">Create Post</header>
           <form onSubmit={handleSubmit}>
-            <div className="content">
-              <img
-                src="https://img.freepik.com/free-icon/user_318-159711.jpg"
-                alt="logo"
-              />
+            <dsiv className="content">
+              <img src={currentUser.image} alt="logo" />
               <h2>{currentUser.username}</h2>
-            </div>
+              {console.log(currentUser.image)}
+            </dsiv>
             <textarea
               placeholder="What's on your mind, CodingNepal?"
               spellCheck="false"
@@ -216,38 +219,46 @@ function Post() {
             <div key={index} className="post-item">
               <div className="post-content">
                 <div className=".CommentValue">
-                  <img
-                    src="https://img.freepik.com/free-icon/user_318-159711.jpg"
-                    alt="logo"
-                  />
+                  <img src={post.image} alt="logo" />
                   <h2>{post.name}</h2>
                 </div>
                 {post.name === currentUser.username && (
                   <>
-                    <button onClick={() => Delete(post.id)}>Delete</button>
-                    <button onClick={() => show(post.id)}>Edit</button>
-                    {showInputPost === post.id && (
-                      <>
-                        <input type="text" onChange={getValuePost} />
-                        <button onClick={() => Edit(post.id, updatenewPost)}>
-                          Add
-                        </button>
-                      </>
-                    )}
+                    <div className="Icon-mange">
+                      <i
+                        class="fa-solid fa-trash"
+                        onClick={() => Delete(post.id)}
+                      ></i>
+
+                      <i class="fas fa-edit" onClick={() => show(post.id)}></i>
+                    </div>
                   </>
                 )}
-
+                {showInputPost === post.id && (
+                  <>
+                    <div className="edit-post-mange">
+                      <input type="text" onChange={getValuePost} />
+                      <button onClick={() => Edit(post.id, updatenewPost)}>
+                        Add
+                      </button>
+                      <i class="fa-solid fa-message-plus"></i>
+                    </div>
+                  </>
+                )}
                 <div>
                   <span>{post.date}</span>
                 </div>
               </div>
               <p>{post.content}</p>
-              <br />
-              <br />
+
               {post.comment.map((comment) => {
                 return (
                   <>
-                    <Comment content={comment.content} name={comment.user} />
+                    <Comment
+                      content={comment.content}
+                      name={comment.user}
+                      image={comment.image}
+                    />
                   </>
                 );
               })}
@@ -257,7 +268,8 @@ function Post() {
                   placeholder="Comment"
                   onChange={getVcomment}
                 />
-                <button onClick={() => AddComment(post.id)}>Add</button>
+
+                <BiSolidCommentAdd onClick={() => AddComment(post.id)} />
               </div>
             </div>
           ))}

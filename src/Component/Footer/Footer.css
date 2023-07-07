@@ -1,6 +1,6 @@
 footer {
   background-color: rgb(255, 255, 255);
-  width: 100vw;
+  /* width: 100vw; */
   margin-top: 4em;
   box-shadow: 1px 0px 3px 0px gray;
 }

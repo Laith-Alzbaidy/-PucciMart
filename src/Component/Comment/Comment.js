@@ -1,13 +1,14 @@
 import "./Comment.css";
 
-function Comment({ content, name }) {
+function Comment({ content, name, image }) {
   return (
     <div className="ui comments">
       <h3 className="ui dividing header">Comments</h3>
       <div className="comment">
         <a className="avatar">
           <img
-            src="https://img.freepik.com/free-icon/user_318-159711.jpg"
+            // src="https://img.freepik.com/free-icon/user_318-159711.jpg"
+            src={image}
             alt="logo"
           />
         </a>

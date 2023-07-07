@@ -8,7 +8,6 @@
   background: #fff;
   border-radius: 10px;
   transition: height 0.2s ease;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .post {
@@ -318,6 +317,7 @@ form textarea:valid~button:hover {
 
 .post-item p {
   margin: 10px 0;
+  word-wrap: break-word;
 }
 
 .post-item span {
@@ -336,4 +336,20 @@ form textarea:valid~button:hover {
   width: 15%;
   height: 38px;
 
+}
+
+
+.Icon-mange i {
+  font-size: 20px;
+}
+
+.Icon-mange {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+  font-size: 40px;
 }

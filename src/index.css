@@ -71,6 +71,11 @@ code {
 }
 
 
+i {
+  cursor: pointer;
+}
+
+
 
 @media(max-width : 700px) {
   .container .wrapper section {

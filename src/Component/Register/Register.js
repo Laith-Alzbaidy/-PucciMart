@@ -17,6 +17,8 @@ function Register() {
 
   // State to store form data
   const [formData, setFormData] = useState({
+    image:
+      "https://img.freepik.com/premium-vector/businessman-profile-cartoon_18591-58479.jpg?w=2000",
     email: "",
     password: "",
     confirmpassword: "",
@@ -42,6 +44,7 @@ function Register() {
       formData.gender !== "" &&
       formData.email.match(emailRegex) &&
       formData.password.match(passwordRegex) &&
+      !formData.password.includes("&") &&
       formData.password === formData.confirmpassword
     ) {
       SetRegister(formData);
@@ -103,17 +106,17 @@ function Register() {
     } else if (!formData.password.match(/^.{8,}$/)) {
       formErrors.password = "Password must be at least 8 characters long*";
       isValid = false;
-    } else if (formData.password !== formData.confirmpassword) {
-      formErrors.password = "Password does not the same confirm password*";
+    } else if (formData.password.includes("&")) {
+      formErrors.password = "Password contain & this invaild ";
       isValid = false;
-    }
-    if (formData.confirmpassword === "") {
-      formErrors.confirmpassword = "confirmpassword is required*";
-      isValid = false;
-    } else if (formData.confirmpassword !== formData.password) {
-      formErrors.confirmpassword = "Password does not the same password*";
-      isValid = false;
-    }
+    } else if (formData.password !== formData.confirmpassword)
+      if (formData.confirmpassword === "") {
+        formErrors.confirmpassword = "confirmpassword is required*";
+        isValid = false;
+      } else if (formData.confirmpassword !== formData.password) {
+        formErrors.confirmpassword = "Password does not the same password*";
+        isValid = false;
+      }
 
     if (formData.username === "") {
       formErrors.username = "Username is required*";
