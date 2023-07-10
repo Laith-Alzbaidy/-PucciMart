@@ -91,3 +91,39 @@
 .Products {
   margin-top: 100px;
 }
+
+.ListCat {
+  margin: 50px;
+  display: flex !important;
+  align-items: center;
+  gap: 25px !important;
+}
+
+.ListCat button {
+  border: none;
+  background-color: var(--btn-pg);
+  padding: 5px 20px;
+}
+
+.List-Catigory {
+  background-color: var(--btn-pg);
+  border: none;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+
+.Cont-Catigory {
+  display: flex;
+  width: 90vw;
+  margin-left: 55px;
+  align-items: center;
+  justify-content: center !important;
+  gap: 20px;
+  margin: 20px;
+}
+
+.input-group {
+  flex-wrap: nowrap;
+  width: 270px;
+}

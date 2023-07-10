@@ -16,6 +16,9 @@ import { Routes, Route } from "react-router-dom";
 import Community from "./Component/Community/Community";
 import Allproducts from "./Component/Allproducts/Allproducts";
 import ProductsDetails from "./Component/ProductDetails/ProductsDetails";
+import AddToCart from "./Component/AddToCart/AddToCart";
+import Cart from "./Component/Cart/Cart";
+import History from "./Component/History/History";
 function App() {
   console.log(Allproducts);
   return (
@@ -46,9 +49,15 @@ function App() {
         <Route path="Profile" element={<Profile />} />
         <Route path="Feedback" element={<Feedback />} />
         <Route path="/:UserId/Community" element={<Community />} />
+        <Route path="/:UserId/Cart" element={<Cart />} />
+        <Route path="/:UserId/History" element={<History />} />
         <Route path="Community" element={<Community />} />
         {/* <Route path="/:UserId/Community" element={<Community />} /> */}
         <Route path="/:UserId/Profile" element={<Profile />} />
+        <Route
+          path="/:UserId/Allproducts/ProductsDetails/:producId/AddToCart"
+          element={<AddToCart />}
+        />
         {/* <Profile /> */}
         {/* <Feedback /> */}
         {/* <Hero />

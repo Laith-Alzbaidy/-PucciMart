@@ -2,12 +2,18 @@ import Logo from "../../Imges/Logo.png";
 import "./Navbar.css";
 import { Link, useParams } from "react-router-dom";
 import Context from "../Context/Context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 function Nav() {
   const { GetCurentId } = useContext(Context);
+  const [toggle, setToggle] = useState(false);
   const userId = GetCurentId();
   const params = useParams();
+
+  const toogleBurger = () => {
+    setToggle(!toggle);
+    console.log(toggle);
+  };
 
   const LocationCommunity = () => {
     if (userId == "Community") {
@@ -33,7 +39,7 @@ function Nav() {
   }
   function goToProduct() {
     if (userId >= 1) {
-      return `/${userId}/#Product`;
+      return `/${userId}/Allproducts`;
     } else {
       return "/#Product";
     }
@@ -45,6 +51,13 @@ function Nav() {
       return "/#Services";
     }
   }
+  // function goToProduct() {
+  //   if (userId >= 1) {
+  //     return `/${userId}/#Product`;
+  //   } else {
+  //     return "/#product";
+  //   }
+  // }
 
   console.log(userId);
   return (
@@ -52,45 +65,54 @@ function Nav() {
       <Link to="/">
         <img className="Logo" src={Logo} alt="" />
       </Link>
-      <nav>
+      <nav className={toggle ? "active" : ""}>
         <ul className="list-nav">
-          <HashLink to={getUserIdHome()}>
+          <HashLink onClick={() => setToggle(false)} to={getUserIdHome()}>
             <li>Home</li>
           </HashLink>
-          <HashLink to={goToServices()}>
+          <HashLink onClick={() => setToggle(false)} to={goToServices()}>
             <li>Services</li>
           </HashLink>
-          <HashLink to={goToProduct()}>
+          <HashLink onClick={() => setToggle(false)} to={goToProduct()}>
             <li>Product</li>
           </HashLink>
-          <HashLink to={goToAbout()}>
+          <HashLink onClick={() => setToggle(false)} to={goToAbout()}>
             <li>About Us</li>
           </HashLink>
           {userId >= 1 ? (
             <>
-              <Link to={LocationCommunity()}>
+              <Link onClick={() => setToggle(false)} to={LocationCommunity()}>
                 <li>Community</li>
               </Link>
-              <Link to={`${userId}/Profile`}>
+              <Link onClick={() => setToggle(false)} to={`${userId}/Profile`}>
                 <li>EditProfile</li>
               </Link>
+              <Link onClick={() => setToggle(false)} to={`${userId}/Cart`}>
+                <li>Cart</li>
+              </Link>
+              <Link onClick={() => setToggle(false)} to={`${userId}/History`}>
+                <li>History</li>
+              </Link>
+              <div></div>
             </>
           ) : null}
         </ul>
       </nav>
-      <div>
-        {userId >= 1 ? (
-          <>
-            <Link className="btn-Login" to="/">
-              LogOut
-            </Link>
-          </>
-        ) : (
-          <Link className="btn-Login" to="/Login">
-            Login
-          </Link>
-        )}
+
+      <div onClick={toogleBurger} className="togle-nav">
+        <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
       </div>
+      {userId >= 1 ? (
+        <>
+          <Link onClick={() => setToggle(false)} className="btn-Login" to="/">
+            LogOut
+          </Link>
+        </>
+      ) : (
+        <Link className="btn-Login" to="/Login" style={{ display: "block" }}>
+          Login
+        </Link>
+      )}
     </header>
   );
 }

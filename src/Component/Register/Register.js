@@ -28,6 +28,7 @@ function Register() {
     firstname: "",
     lastname: "",
     address: "",
+    cart: [],
     posts: [
       {
         comments: [],

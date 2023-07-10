@@ -29,6 +29,8 @@ header::after {
 .list-nav li {
   list-style: none;
   position: relative;
+  font-weight: 550;
+  font-family: sans-serif;
 }
 
 .list-nav a {
@@ -77,4 +79,9 @@ header::after {
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
+  margin-right: 35px;
+}
+
+.togle-nav i {
+  font-size: 30px;
 }

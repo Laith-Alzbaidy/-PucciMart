@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
+import Swal from "sweetalert2";
 import Context from "../../Context/Context";
 
 function Products() {
   const { allproducts } = useContext(Context);
-
   const { GetCurentId } = useContext(Context);
 
   const userId = GetCurentId();
@@ -14,7 +14,7 @@ function Products() {
     if (userId >= 1) {
       return `/${userId}/Allproducts`;
     } else {
-      return `Allproducts`;
+      return `Login`;
     }
   };
 
@@ -36,9 +36,7 @@ function Products() {
                 <div className="ContentCardProduct">
                   <h3>{element.name}</h3>
                   <p>Male Young Tabby (mixed)</p>
-                  <span>
-                    $296<del>$350</del>
-                  </span>
+                  <span>{`Price $${element.price}`}</span>
                 </div>
               </div>
             );

@@ -14,4 +14,29 @@
   justify-content: center;
   gap: 10px;
   font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.quantity h1 {
+  margin: 0;
+}
+
+.AddtoCart {
+  background: rgb(10, 160, 130);
+  padding: 10px;
+  border-radius: 4px;
+
+}
+
+.AddtoCart:hover {
+  color: rgb(255, 255, 255);
+
 }
