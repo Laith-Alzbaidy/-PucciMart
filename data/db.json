@@ -117,7 +117,7 @@
       "price": 5,
       "offer": "Buy 4, Get 1 Free",
       "brand": "AquaWorld",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 13,
@@ -127,7 +127,7 @@
       "price": 3,
       "offer": "10% off on purchase of 5 or more",
       "brand": "AquaticWonders",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 14,
@@ -137,7 +137,7 @@
       "price": 8,
       "offer": "Free Betta food with purchase",
       "brand": "BettaLife",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 15,
@@ -147,7 +147,7 @@
       "price": 12,
       "offer": "15% off for first-time customers",
       "brand": "FinTastic",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 16,
@@ -157,7 +157,7 @@
       "price": 2,
       "offer": "Buy 2, Get 1 Free",
       "brand": "GoldenAquatics",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 17,
@@ -167,7 +167,7 @@
       "price": 50,
       "offer": "10% off on purchase of 2 or more",
       "brand": "MelodyBirds",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 18,
@@ -177,7 +177,7 @@
       "price": 30,
       "offer": "Free cage with purchase",
       "brand": "HappyWings",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 19,
@@ -187,9 +187,8 @@
       "price": 80,
       "offer": "15% off for first-time customers",
       "brand": "FeatheredFriends",
-      "quantity": 1
+      "quintity": 1
     },
-
     {
       "id": 20,
       "name": "Lovebird",
@@ -198,7 +197,7 @@
       "price": 60,
       "offer": "Buy one, get one at half price",
       "brand": "LovelyFeathers",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 21,
@@ -208,7 +207,7 @@
       "price": 25,
       "offer": "Buy 2, get 1 free",
       "brand": "MelodiousTweets",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 22,
@@ -218,9 +217,8 @@
       "price": 300,
       "offer": "Free bird toy with purchase",
       "brand": "PlayfulPlumes",
-      "quantity": 1
+      "quintity": 1
     },
-
     {
       "id": 23,
       "name": "African Grey Parrot",
@@ -229,7 +227,7 @@
       "price": 500,
       "offer": "Free delivery for orders over $400",
       "brand": "SmartFeathers",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 24,
@@ -239,7 +237,7 @@
       "price": 1000,
       "offer": "20% off for repeat customers",
       "brand": "ColorfulCompanions",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 25,
@@ -249,7 +247,7 @@
       "price": 70,
       "offer": "Buy one, get a bird toy for free",
       "brand": "TinyTweets",
-      "quantity": 1
+      "quintity": 1
     },
     {
       "id": 26,
@@ -259,10 +257,9 @@
       "price": 900,
       "offer": "Free grooming session with purchase",
       "brand": "RainbowPlumes",
-      "quantity": 1
+      "quintity": 1
     }
   ],
-
   "users": [
     {
       "image": "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp",
@@ -275,7 +272,16 @@
       "firstname": "",
       "lastname": "",
       "address": "",
-      "cart": [],
+      "cart": [
+        {
+          "id": 2,
+          "price": 2800,
+          "quintity": 4,
+          "name": "Luna",
+          "image": "https://www.purina.co.uk/sites/default/files/2022-06/Siamese-Cat_0.jpg?itok=Qy1J6ZDS",
+          "date": "2023-07-10T20:38:31.293Z"
+        }
+      ],
       "posts": [],
       "id": 1,
       "history": [],
@@ -299,7 +305,6 @@
     }
   ],
   "AllPost": [],
-
   "category": [
     {
       "id": "Cat",
@@ -372,7 +377,7 @@
           "price": 950,
           "offer": "100 off",
           "brand": "British Whiskers",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 8,
@@ -382,7 +387,7 @@
           "price": 850,
           "offer": "50 off",
           "brand": "Abyssinia Pets",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 9,
@@ -392,7 +397,7 @@
           "price": 1300,
           "offer": "200 off",
           "brand": "BareSkin Cattery",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 10,
@@ -402,7 +407,7 @@
           "price": 1100,
           "offer": "100 off",
           "brand": "Fluffy Tails",
-          "quantity": 1
+          "quintity": 1
         }
       ]
     },
@@ -466,7 +471,7 @@
           "price": 600,
           "offer": "100 off",
           "brand": "BeaglePaws",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 13,
@@ -476,7 +481,7 @@
           "price": 1100,
           "offer": "200 off",
           "brand": "BoxerBuddies",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 14,
@@ -486,7 +491,7 @@
           "price": 1300,
           "offer": "300 off",
           "brand": "RottieGuardians",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 15,
@@ -496,105 +501,11 @@
           "price": 800,
           "offer": "150 off",
           "brand": "ShihTzuLove",
-          "quantity": 1
+          "quintity": 1
         }
       ]
     },
     {
-      "id": "Fish",
-      "types": [
-        {
-          "id": 12,
-          "name": "Neon Tetra",
-          "description": "Neon Tetras are small, brightly colored freshwater fish known for their vibrant blue and red stripes. They are peaceful, schooling fish and add a beautiful touch to any aquarium.",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/Neonsalmler_Paracheirodon_innesi.jpg",
-          "price": 5,
-          "offer": "Buy 4, Get 1 Free",
-          "brand": "AquaWorld",
-          "quantity": 1
-        },
-        {
-          "id": 13,
-          "name": "Guppy",
-          "description": "Guppies are small, colorful freshwater fish that come in a variety of patterns and colors. They are easy to care for and make a great choice for beginner fish keepers.",
-          "image": "https://media.istockphoto.com/id/1057678494/photo/guppy-poecilia-reticulata-colorful-rainbow-tropical-aquarium-fish.jpg?s=612x612&w=0&k=20&c=4tUPXfrG_nudlJCDLGPudHPkVYfgtxI22Nm_2H1Ama4=",
-          "price": 3,
-          "offer": "10% off on purchase of 5 or more",
-          "brand": "AquaticWonders",
-          "quantity": 1
-        },
-        {
-          "id": 14,
-          "name": "Betta Fish",
-          "description": "Betta fish, also known as Siamese fighting fish, are known for their vibrant colors and long flowing fins. They are popular pets and can be kept in small aquariums.",
-          "image": "https://cdn.shopify.com/s/files/1/0311/3149/articles/care-guide-for-betta-fish-the-best-beginner-pet-fish-599115.jpg?v=1659975681",
-          "price": 8,
-          "offer": "Free Betta food with purchase",
-          "brand": "BettaLife",
-          "quantity": 1
-        },
-        {
-          "id": 15,
-          "name": "Angelfish",
-          "description": "Angelfish are graceful freshwater fish known for their unique shape and beautiful fins. They come in various color variations and make a stunning addition to any aquarium.",
-          "image": "https://media.istockphoto.com/id/177095679/photo/bluering-orange-and-blue-angelfish-with-white-tail.jpg?s=612x612&w=0&k=20&c=-KPUfb-OP1SxY2SNiD_c-0AvEurxAQsPSnhA9wm6_Ps=",
-          "price": 12,
-          "offer": "15% off for first-time customers",
-          "brand": "FinTastic",
-          "quantity": 1
-        },
-        {
-          "id": 16,
-          "name": "Goldfish",
-          "description": "Goldfish are one of the most popular freshwater fish and are known for their bright colors and distinct body shapes. They are hardy and can adapt to a wide range of water conditions.",
-          "image": "https://storage.prompt-hunt.workers.dev/cliffhqfa000vjk0frvygvu5c_1",
-          "price": 2,
-          "offer": "Buy 2, Get 1 Free",
-          "brand": "GoldenAquatics",
-          "quantity": 1
-        },
-        {
-          "id": 17,
-          "name": "Discus Fish",
-          "description": "Discus fish are known for their vibrant colors and round-shaped bodies. They require specific water conditions and are popular among experienced fish keepers.",
-          "image": "https://i.pinimg.com/736x/88/6c/72/886c723ded6269ba9e65847cacae3962.jpg",
-          "price": 20,
-          "offer": "Free shipping on orders over $50",
-          "brand": "DiscusParadise",
-          "quantity": 1
-        },
-        {
-          "id": 18,
-          "name": "Tiger Barb",
-          "description": "Tiger Barbs are small, active freshwater fish with distinctive black stripes. They are known for their playful behavior and are best kept in a school of six or more.",
-          "image": "https://i0.wp.com/fishkeepingfans.com/wp-content/uploads/2021/07/Tiger-Barb-2.jpg?fit=2475%2C1650&ssl=1",
-          "price": 4,
-          "offer": "10% off on purchase of 10 or more",
-          "brand": "BarbNation",
-          "quantity": 1
-        },
-
-        {
-          "id": 19,
-          "name": "Molly Fish",
-          "description": "Molly fish are small, peaceful freshwater fish available in a variety of colors. They are easy to care for and make a great addition to community aquariums.",
-          "image": "https://st2.depositphotos.com/4398543/7879/i/600/depositphotos_78799548-stock-photo-molly-fish-isolated-on-the.jpg",
-          "price": 6,
-          "offer": "Buy 3, Get 1 Free",
-          "brand": "MollyMania",
-          "quantity": 1
-        },
-        {
-          "id": 20,
-          "name": "Cichlid Fish",
-          "description": "Cichlids are a diverse group of freshwater fish known for their vibrant colors and unique behaviors. They require specific water conditions and are popular among experienced fish keepers.",
-          "image": "data:image/jpeg;base64,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",
-          "price": 15,
-          "offer": "20% off for repeat customers",
-          "brand": "CichlidCentral",
-          "quantity": 1
-        }
-      ],
       "id": "Bird",
       "types": [
         {
@@ -605,7 +516,7 @@
           "price": 50,
           "offer": "10% off on purchase of 2 or more",
           "brand": "MelodyBirds",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 2,
@@ -615,7 +526,7 @@
           "price": 30,
           "offer": "Free cage with purchase",
           "brand": "HappyWings",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 3,
@@ -625,9 +536,8 @@
           "price": 80,
           "offer": "15% off for first-time customers",
           "brand": "FeatheredFriends",
-          "quantity": 1
+          "quintity": 1
         },
-
         {
           "id": 4,
           "name": "Lovebird",
@@ -636,7 +546,7 @@
           "price": 60,
           "offer": "Buy one, get one at half price",
           "brand": "LovelyFeathers",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 5,
@@ -646,7 +556,7 @@
           "price": 25,
           "offer": "Buy 2, get 1 free",
           "brand": "MelodiousTweets",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 6,
@@ -656,9 +566,8 @@
           "price": 300,
           "offer": "Free bird toy with purchase",
           "brand": "PlayfulPlumes",
-          "quantity": 1
+          "quintity": 1
         },
-
         {
           "id": 7,
           "name": "African Grey Parrot",
@@ -667,7 +576,7 @@
           "price": 500,
           "offer": "Free delivery for orders over $400",
           "brand": "SmartFeathers",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 8,
@@ -677,7 +586,7 @@
           "price": 1000,
           "offer": "20% off for repeat customers",
           "brand": "ColorfulCompanions",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 9,
@@ -687,7 +596,7 @@
           "price": 70,
           "offer": "Buy one, get a bird toy for free",
           "brand": "TinyTweets",
-          "quantity": 1
+          "quintity": 1
         },
         {
           "id": 11,
@@ -697,7 +606,7 @@
           "price": 900,
           "offer": "Free grooming session with purchase",
           "brand": "RainbowPlumes",
-          "quantity": 1
+          "quintity": 1
         }
       ]
     }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Context from "../Context/Context";
@@ -84,10 +85,10 @@ const ShoppingCart = () => {
                 <div className="row">
                   <div className="col-lg-7">
                     <h5 className="mb-3">
-                      <a href="#!" className="text-body">
+                      <Link to={`/${userId}/Allproducts`} className="text-body">
                         <i className="fas fa-long-arrow-alt-left me-2"></i>
                         Continue shopping
-                      </a>
+                      </Link>
                     </h5>
                     <hr />
                     <div className="d-flex justify-content-between align-items-center mb-4">
