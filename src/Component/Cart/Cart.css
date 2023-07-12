@@ -2,3 +2,7 @@
   align-items: center !important;
   gap: 30px;
 }
+
+.form-control:required {
+  background-color: red !important;
+}

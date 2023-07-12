@@ -10,41 +10,57 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  // Function to handle changes in the email input field
   const handleEmail = (event) => {
     const value = event.target.value;
     setEmail(value);
   };
 
+  // Function to handle changes in the password input field
   const handlePassword = (event) => {
     const value = event.target.value;
     setPassword(value);
   };
 
-  const handleForm = (event) => {
+  // Function to handle the form submission
+  const handleForm = async (event) => {
     event.preventDefault();
-    getCurrentUser();
+    await getCurrentUser();
   };
 
-  const getCurrentUser = () => {
-    axios
-      .get(`http://localhost:9000/users/?email=${email}&password=${password}`)
-      .then((response) => {
-        if (response.data[0]) {
-          if (
-            response.data[0].email === email &&
-            response.data[0].password === password
-          ) {
-            setErrors("");
-            Navigate(`/${response.data[0].id}`);
-            // setCurentUser(response.data[0]);
-          } else {
-            setErrors("Email or password is invalid");
-          }
+  // Function to get the current user from the API
+  const getCurrentUser = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:9001/users/?email=${email}&password=${password}`
+      ); // Update the URL to the correct API endpoint
+
+      if (response.data[0]) {
+        // If the response data is not empty
+        if (
+          response.data[0].email === email &&
+          response.data[0].password === password
+        ) {
+          // If the email and password match
+          setErrors("");
+          Navigate(`/${response.data[0].id}`);
+          // setCurentUser(response.data[0]);
         } else {
+          // If the email or password is invalid
           setErrors("Email or password is invalid");
         }
-      });
+      } else {
+        // If the response data is empty
+        setErrors("Email or password is invalid");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -57,12 +73,19 @@ function Login() {
           placeholder="Email"
           onChange={handleEmail}
         />
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          onChange={handlePassword}
-        />
+        <div className="field-register showPassword">
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            onChange={handlePassword}
+            name="password"
+          />
+          <i
+            id="eyessReg"
+            className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+            onClick={toggleShowPassword}
+          ></i>
+        </div>
         {errors && <span className="errors-color">{errors}</span>}
         <button type="submit">Login</button>
         <p>

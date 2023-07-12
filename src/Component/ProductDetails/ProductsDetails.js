@@ -17,7 +17,7 @@ function ProductsDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/products/${params.producId}`)
+      .get(`http://localhost:9001/products/${params.producId}`)
       .then((respons) => {
         console.log(respons.data);
         setProductDet(respons.data);
@@ -27,7 +27,7 @@ function ProductsDetails() {
   }, []);
 
   const getUser = () => {
-    axios.get(`http://localhost:9000/users/${userId}`).then((respons) => {
+    axios.get(`http://localhost:9001/users/${userId}`).then((respons) => {
       setUser(respons.data);
       setcart(respons.data.cart);
     });

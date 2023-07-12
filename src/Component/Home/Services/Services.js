@@ -1,4 +1,8 @@
-import imges from "../../../Imges/rapiet.png";
+import rapiet from "../../../Imges/rapiet.png";
+import bird from "../../../Imges/bird.png";
+import cat from "../../../Imges/cat.png";
+import dog from "../../../Imges/dog.png";
+import fish from "../../../Imges/fish.png";
 import "./Services.css";
 function Services() {
   return (
@@ -13,26 +17,26 @@ function Services() {
       <div className="Cards-services">
         <div className="card-services">
           <div className="Content-card-services">
-            <img src={imges} alt="" />
-            <p>Rabbit</p>
+            <img src={bird} alt="" />
+            <p>Bird</p>
           </div>
         </div>
         <div className="card-services">
           <div className="Content-card-services">
-            <img src={imges} alt="" />
-            <p>Rabbit</p>
+            <img src={cat} alt="" />
+            <p>Cat</p>
           </div>
         </div>
         <div className="card-services">
           <div className="Content-card-services">
-            <img src={imges} alt="" />
-            <p>Rabbit</p>
+            <img src={dog} alt="" />
+            <p>Dog</p>
           </div>
         </div>
         <div className="card-services">
           <div className="Content-card-services">
-            <img src={imges} alt="" />
-            <p>Rabbit</p>
+            <img src={fish} alt="" />
+            <p>fish</p>
           </div>
         </div>
       </div>

@@ -13,6 +13,9 @@ function Landingpage() {
       <Products />
       <Qotes />
       {/* <Feedback /> */}
+      <a id="upLink" href="#">
+        <i id="up" class="fa-solid fa-circle-up"></i>
+      </a>
     </>
   );
 }

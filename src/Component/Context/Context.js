@@ -13,13 +13,13 @@ function Provider({ children }) {
   // const userId = location.pathname.split("/")[1];
 
   const GetAllProducts = () => {
-    axios.get("http://localhost:9000/products").then((response) => {
+    axios.get("http://localhost:9001/products").then((response) => {
       setAllProduct(response.data);
       // console.log(response.data);
     });
   };
   // const GetAllPost = () => {
-  //   axios.get("http://localhost:9000/products").then((response) => {
+  //   axios.get("http://localhost:9001/products").then((response) => {
   //     setAllProduct(response.data);
   //     // console.log(response.data);
   //   });
@@ -32,16 +32,17 @@ function Provider({ children }) {
   };
 
   const Getusers = () => {
-    axios.get("http://localhost:9000/users").then((respons) => {
+    axios.get("http://localhost:9001/users").then((respons) => {
       setUsers(respons.data);
     });
   };
 
   function SetRegister(newAccount) {
-    axios.post("http://localhost:9000/users/", newAccount);
+    axios.post("http://localhost:9001/users/", newAccount);
   }
   useEffect(() => {
     Getusers();
+
     GetAllProducts();
   }, []);
 
@@ -54,12 +55,7 @@ function Provider({ children }) {
     users,
     SetRegister,
     GetCurentId,
-    // setPost,
-    // handlePost,
     allproducts,
-    users,
-    // CurrntUser,
-    // setCurentUser,
   };
 
   return <Context.Provider value={Data}>{children}</Context.Provider>;

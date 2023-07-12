@@ -12,7 +12,7 @@ const History = () => {
   const userId = GetCurentId();
 
   const getUser = () => {
-    axios.get(`http://localhost:9000/users/${userId}`).then((response) => {
+    axios.get(`http://localhost:9001/users/${userId}`).then((response) => {
       setUser(response.data);
       setHistory(response.data.history);
     });
@@ -71,22 +71,15 @@ const History = () => {
                           <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
                             <p className="text-muted mb-0">{cart.name}</p>
                           </div>
+
                           <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
-                            <p className="text-muted mb-0">{cart.brand}</p>
-                          </div>
-                          <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
-                            <p className="text-muted mb-0 small">
-                              {cart.brand}
-                            </p>
-                          </div>
-                          <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
-                            <p className="text-muted mb-0 small">{`Qty:${cart.quintity}`}</p>
+                            <p className="text-muted mb-0 small">{`quantity:${cart.quintity}`}</p>
                           </div>
                           <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
                             <p className="text-muted mb-0 small">{`$${cart.price}`}</p>
                           </div>
                           <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
-                            <p className="text-muted mb-0 small">{`$${cart.date}`}</p>
+                            <p className="text-muted mb-0 small">{`${cart.date}`}</p>
                           </div>
                         </div>
                         <hr

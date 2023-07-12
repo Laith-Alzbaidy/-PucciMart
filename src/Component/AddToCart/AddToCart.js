@@ -21,7 +21,7 @@ function AddToCart() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/products/${params.producId}`)
+      .get(`http://localhost:9001/products/${params.producId}`)
       .then((respons) => {
         console.log(respons.data);
         setProductDet(respons.data);
@@ -32,7 +32,7 @@ function AddToCart() {
   // console.log(price);
 
   const getUser = () => {
-    axios.get(`http://localhost:9000/users/${userId}`).then((respons) => {
+    axios.get(`http://localhost:9001/users/${userId}`).then((respons) => {
       setUser(respons.data);
       setcart(respons.data.cart);
     });
@@ -53,11 +53,12 @@ function AddToCart() {
         name: productDet.name,
         image: productDet.image,
         date: datenow,
+        brand: productDet.brand,
       };
       const newCart = [...cart, AddCar];
       setcart(newCart);
       axios
-        .put(`http://localhost:9000/users/${userId}`, {
+        .put(`http://localhost:9001/users/${userId}`, {
           ...user,
           cart: newCart,
         })
@@ -78,7 +79,7 @@ function AddToCart() {
 
       setcart(updatedCart);
       axios
-        .put(`http://localhost:9000/users/${userId}`, {
+        .put(`http://localhost:9001/users/${userId}`, {
           ...user,
           cart: updatedCart,
         })

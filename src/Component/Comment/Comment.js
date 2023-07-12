@@ -1,6 +1,6 @@
 import "./Comment.css";
 
-function Comment({ content, name, image }) {
+function Comment({ content, name, image, date }) {
   return (
     <div className="ui comments">
       <h3 className="ui dividing header">Comments</h3>
@@ -15,7 +15,7 @@ function Comment({ content, name, image }) {
         <div className="content">
           <a className="author">{name}</a>
           <div className="metadata">
-            <span className="date">Today at 5:42PM</span>
+            <span className="date">{date}</span>
           </div>
           <div className="text">{content}</div>
           <div className="actions">

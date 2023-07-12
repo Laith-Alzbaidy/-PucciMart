@@ -26,7 +26,7 @@ const ShoppingCart = () => {
   }, [cart]);
 
   const getUser = () => {
-    axios.get(`http://localhost:9000/users/${userId}`).then((respons) => {
+    axios.get(`http://localhost:9001/users/${userId}`).then((respons) => {
       setUser(respons.data);
       setcart(respons.data.cart);
     });
@@ -46,7 +46,7 @@ const ShoppingCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.put(`http://localhost:9000/users/${userId}`, {
+        axios.put(`http://localhost:9001/users/${userId}`, {
           ...user,
           cart: remove,
         });
@@ -66,7 +66,7 @@ const ShoppingCart = () => {
     });
     /* Read more about isConfirmed, isDenied below */
     const updatedHistory = [...user.history, ...user.cart];
-    axios.put(`http://localhost:9000/users/${userId}`, {
+    axios.put(`http://localhost:9001/users/${userId}`, {
       ...user,
       history: updatedHistory,
       cart: [],

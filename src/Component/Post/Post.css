@@ -316,8 +316,29 @@ form textarea:valid~button:hover {
 }
 
 .post-item p {
-  margin: 10px 0;
+  margin: 25px 0;
   word-wrap: break-word;
+}
+
+.inputandiconedit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.EditInput {
+  width: 80%;
+  height: 30px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.inputandiconedit button {
+  padding: 4px;
+  border: none;
+  background-color: var(--btn-pg);
 }
 
 .post-item span {

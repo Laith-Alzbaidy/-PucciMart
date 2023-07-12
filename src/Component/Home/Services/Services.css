@@ -3,6 +3,10 @@
   height: 64px;
 }
 
+.Services {
+  margin: 100px 0;
+}
+
 .Content-card-services {
   display: flex;
   background: linear-gradient(to right, rgba(7, 160, 129, 40%), white);
@@ -30,4 +34,10 @@
 
 .title-services p {
   font-size: 20px;
+}
+
+
+.Content-card-services p {
+  font-size: 20px;
+  font-weight: 600;
 }

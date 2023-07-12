@@ -6,22 +6,22 @@ function Allproducts() {
   const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-
+  console.log(category);
   const getAllProducts = () => {
-    axios.get("http://localhost:9000/products").then((response) => {
+    axios.get("http://localhost:9001/products").then((response) => {
       setProducts(response.data);
     });
   };
 
   const getCategory = () => {
-    axios.get("http://localhost:9000/category").then((response) => {
+    axios.get("http://localhost:9001/category").then((response) => {
       setCategory(response.data.map((cat) => cat.id));
     });
   };
 
   const getProductByCategory = (categoryName) => {
     axios
-      .get(`http://localhost:9000/category/${categoryName}`)
+      .get(`http://localhost:9001/category/${categoryName}`)
       .then((response) => {
         setProducts(response.data.types);
       });

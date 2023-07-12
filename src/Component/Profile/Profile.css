@@ -85,3 +85,15 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+
+#eyes {
+  position: absolute;
+  right: 10px;
+  line-height: 3;
+  font-size: 15px;
+}
+
+.container-Password {
+  position: relative;
+}

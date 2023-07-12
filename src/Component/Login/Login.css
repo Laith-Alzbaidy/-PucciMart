@@ -63,3 +63,14 @@ select {
 .field-register {
   width: 100%;
 }
+
+.showPassword {
+  position: relative;
+}
+
+#eyessReg {
+  position: absolute;
+  right: 12px;
+  top: 17px;
+  font-size: 15px;
+}

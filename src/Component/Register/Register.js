@@ -1,19 +1,21 @@
 import React, { useContext, useState } from "react";
 import "../Login/Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import Context from "../Context/Context";
+import axios from "axios";
 
 function Register() {
   // Access the register function from the context
   const { SetRegister } = useContext(Context);
+  const [showPassword, setShowPassword] = useState(false);
+
   const { users } = useContext(Context);
   const navigation = useNavigate();
+
   // errors with registration validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex =
     /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*()_+\-={}[\]:;'"<>,.?/~]).{8,}$/;
-  // Validation data register
 
   // State to store form data
   const [formData, setFormData] = useState({
@@ -34,8 +36,12 @@ function Register() {
         comments: [],
       },
     ],
+    history: [],
   });
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   function validationRegister() {
     if (
       formData.email !== "" &&
@@ -63,18 +69,17 @@ function Register() {
     if (validateForm()) {
       validationRegister();
     }
-    console.log(validemail);
-    console.log(formData.email);
-    console.log(users);
   };
 
   // Function to handle form field changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+    validateForm();
   };
 
   const [errors, setErrors] = useState({}); // State to store form errors
+
   const validateForm = () => {
     let formErrors = {};
     let isValid = true;
@@ -88,6 +93,8 @@ function Register() {
     } else if (validemail) {
       formErrors.email = "Email already exists*";
       isValid = false;
+    } else {
+      formErrors.email = ""; // Clear the error if valid
     }
 
     if (formData.password === "") {
@@ -104,32 +111,62 @@ function Register() {
       !formData.password.match(/^(?=.*[!@#$%^&*()_+\-={}[\]:;'"<>,.?/~]).+$/)
     ) {
       formErrors.password = "The password must contain at least one symbol*";
-    } else if (!formData.password.match(/^.{8,}$/)) {
-      formErrors.password = "Password must be at least 8 characters long*";
       isValid = false;
     } else if (formData.password.includes("&")) {
-      formErrors.password = "Password contain & this invaild ";
+      formErrors.password = "Password contains an invalid character (&)";
       isValid = false;
-    } else if (formData.password !== formData.confirmpassword)
-      if (formData.confirmpassword === "") {
-        formErrors.confirmpassword = "confirmpassword is required*";
-        isValid = false;
-      } else if (formData.confirmpassword !== formData.password) {
-        formErrors.confirmpassword = "Password does not the same password*";
-        isValid = false;
-      }
+    } else if (formData.password !== formData.confirmpassword) {
+      formErrors.password = "Passwords do not match*";
+      isValid = false;
+    } else {
+      formErrors.password = ""; // Clear the error if valid
+    }
+
+    if (formData.confirmpassword === "") {
+      formErrors.confirmpassword = "Confirm Password is required*";
+      isValid = false;
+    } else if (formData.confirmpassword !== formData.password) {
+      formErrors.confirmpassword = "Passwords do not match*";
+      isValid = false;
+    } else {
+      formErrors.confirmpassword = ""; // Clear the error if valid
+    }
 
     if (formData.username === "") {
       formErrors.username = "Username is required*";
       isValid = false;
     } else if (formData.username.length < 4) {
-      formErrors.username = "Username must be at least 3 characters*";
+      formErrors.username = "Username must be at least 4 characters*";
       isValid = false;
+    } else {
+      formErrors.username = ""; // Clear the error if valid
+    }
+
+    if (formData.lastname === "") {
+      formErrors.lastname = "Last name is required*";
+      isValid = false;
+    } else if (formData.lastname.length < 4) {
+      formErrors.lastname = "Last name must be at least 4 characters*";
+      isValid = false;
+    } else {
+      formErrors.lastname = ""; // Clear the error if valid
+    }
+
+    if (formData.firstname === "") {
+      formErrors.firstname = "First name is required*";
+      isValid = false;
+    } else if (formData.firstname.length < 4) {
+      formErrors.firstname = "First name must be at least 4 characters*";
+      isValid = false;
+    } else {
+      formErrors.firstname = ""; // Clear the error if valid
     }
 
     if (formData.gender === "") {
       formErrors.gender = "Gender is required*";
       isValid = false;
+    } else {
+      formErrors.gender = ""; // Clear the error if valid
     }
 
     setErrors(formErrors); // Store the errors in state
@@ -140,6 +177,33 @@ function Register() {
     <div className="form-container">
       <form className="register-form" onSubmit={handleForm}>
         <h2>Register</h2>
+
+        <div className="field-register">
+          <input
+            type="text"
+            id="firstname"
+            placeholder="First Name"
+            onChange={handleChange}
+            name="firstname"
+            value={formData.firstname}
+          />
+          {errors.firstname && (
+            <span className="errors-color">{errors.firstname}</span>
+          )}
+        </div>
+        <div className="field-register">
+          <input
+            type="text"
+            id="confirmpassword"
+            placeholder="Last Name"
+            onChange={handleChange}
+            name="lastname"
+            value={formData.lastname}
+          />
+          {errors.lastname && (
+            <span className="errors-color">{errors.lastname}</span>
+          )}
+        </div>
         <div className="field-register">
           <input
             type="text"
@@ -163,24 +227,41 @@ function Register() {
             <span className="errors-color">{errors.username}</span>
           )}
         </div>
-        <div className="field-register">
+        {/* 
+        <div className="container-Password">
+            <i
+              id="eyes"
+              className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+              onClick={toggleShowPassword}
+            ></i>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={currentUser.password}
+            />
+          </div> */}
+
+        <div className="field-register showPassword">
           <input
-            type="password"
-            id="password"
+            type={showPassword ? "text" : "password"}
+            value={formData.password}
             placeholder="Password"
             onChange={handleChange}
             name="password"
-            value={formData.password}
           />
           {errors.password && (
             <span className="errors-color">{errors.password}</span>
           )}
+          <i
+            id="eyessReg"
+            className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+            onClick={toggleShowPassword}
+          ></i>
         </div>
         <div className="field-register">
           <input
             type="password"
             id="confirmpassword"
-            placeholder="ConfirmPassword"
+            placeholder="Confirm Password"
             onChange={handleChange}
             name="confirmpassword"
             value={formData.confirmpassword}
@@ -200,7 +281,7 @@ function Register() {
           )}
         </div>
         <button type="submit">Register</button>
-        <Link to="/Login">Not registered? Click here to register</Link>
+        <Link to="/Login">Click here to Login</Link>
       </form>
     </div>
   );

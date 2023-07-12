@@ -4,13 +4,13 @@ import Context from "../Context/Context";
 import axios from "axios";
 import Comment from "../Comment/Comment";
 import { BiSolidCommentAdd } from "react-icons/bi";
+
 function Post() {
   // Accessing the GetCurentId function from the Context
   const { GetCurentId } = useContext(Context);
   // Getting the current user ID
   const userId = GetCurentId();
   // State variables
-  const [showInputPost, setShowInputPost] = useState(""); // State for showing input post
   const [contentPost, setContentPost] = useState(""); // State for post content
   const [currentUser, setCurrentUser] = useState({}); // State for current user
   const [postList, setPostList] = useState([]); // State for user's posts
@@ -18,6 +18,8 @@ function Post() {
   const [updatenewPost, setnewUpdatePost] = useState(""); // State for updated post content
   const [comment, setComment] = useState(""); // State for comment content
   const [Allcomment, setAllComment] = useState([]); // State for all comments
+  const [editingPostId, setEditingPostId] = useState(false); // State for the post being edited
+  const [editing, setEditing] = useState(false); // State for tracking if editing is in progress
 
   useEffect(() => {
     // Fetch user data if the user ID is valid
@@ -32,53 +34,59 @@ function Post() {
     month: "short",
   });
 
-  const getAllPosts = () => {
-    // Fetch all posts from the server
-    axios.get("http://localhost:9000/AllPost").then((response) => {
+  const getAllPosts = async () => {
+    try {
+      // Fetch all posts from the server
+      const response = await axios.get("http://localhost:9001/AllPost");
       setAllPost(response.data);
-    });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const getUser = () => {
-    // Fetch user data based on the user ID
-    axios.get(`http://localhost:9000/Users/${userId}`).then((response) => {
+  const getUser = async () => {
+    try {
+      // Fetch user data based on the user ID
+      const response = await axios.get(`http://localhost:9001/Users/${userId}`);
       setCurrentUser(response.data);
       setPostList(response.data.posts);
-    });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const sendPost = () => {
-    // Create a new post object
-    const newPost = {
-      image: currentUser.image,
-      content: contentPost,
-      date: currenttime,
-      name: currentUser.username,
-      comment: [],
-    };
+  const sendPost = async () => {
+    try {
+      // Create a new post object
+      const newPost = {
+        image: currentUser.image,
+        content: contentPost,
+        date: currenttime,
+        name: currentUser.username,
+        comment: [],
+      };
 
-    // Update the user's posts with the new post
-    const updatedPosts = [...postList, newPost];
-    setPostList(updatedPosts);
+      // Update the user's posts with the new post
+      const updatedPosts = [...postList, newPost];
+      setPostList(updatedPosts);
 
-    // Update the user's posts on the server
-    axios
-      .put(`http://localhost:9000/Users/${userId}`, {
+      // Update the user's posts on the server
+      await axios.put(`http://localhost:9001/Users/${userId}`, {
         ...currentUser,
         posts: updatedPosts,
-      })
-      .then((response) => {
-        console.log(response.data);
       });
 
-    // Add the new post to the server's all posts
-    axios.post("http://localhost:9000/AllPost", newPost).then((response) => {
-      console.log(response.data);
-      getAllPosts();
-    });
+      // Add the new post to the server's all posts
+      await axios.post("http://localhost:9001/AllPost", newPost);
 
-    // Clear the post content
-    setContentPost("");
+      // Refresh all posts
+      await getAllPosts();
+
+      // Clear the post content
+      setContentPost("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleContentPostChange = (event) => {
@@ -96,20 +104,22 @@ function Post() {
     getAllPosts();
   }, []);
 
-  const Delete = (id) => {
-    // Remove the post from the server's all posts
-    const updatedPosts = AllPost.filter((item) => item.id !== id);
+  const Delete = async (id) => {
+    try {
+      // Remove the post from the server's all posts
+      const updatedPosts = AllPost.filter((item) => item.id !== id);
+      setAllPost(updatedPosts);
 
-    axios.delete(`http://localhost:9000/AllPost/${id}`).then((response) => {
-      console.log(response.data);
-    });
+      await axios.delete(`http://localhost:9001/AllPost/${id}`);
 
-    // Update the user's posts without the deleted post
-    axios.put(`http://localhost:9000/Users/${userId}`, {
-      ...currentUser,
-      posts: updatedPosts,
-    });
-    setAllPost(updatedPosts);
+      // Update the user's posts without the deleted post
+      await axios.put(`http://localhost:9001/Users/${userId}`, {
+        ...currentUser,
+        posts: updatedPosts,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const getValuePost = (event) => {
@@ -118,27 +128,25 @@ function Post() {
     setnewUpdatePost(value);
   };
 
-  const show = (id) => {
-    // Show the input field for editing a post
-    setShowInputPost(id);
-  };
-
   const getVcomment = (event) => {
     // Update the comment content as the user types
     const value = event.target.value;
     setComment(value);
   };
 
-  const AddComment = (id) => {
-    // Create a new comment object
-    const newComment = {
-      user: currentUser.username,
-      content: comment,
-      image: currentUser.image,
-    };
+  const AddComment = async (id) => {
+    try {
+      // Create a new comment object
+      const newComment = {
+        user: currentUser.username,
+        content: comment,
+        image: currentUser.image,
+        date: currenttime,
+      };
 
-    // Fetch the post data to add the comment
-    axios.get(`http://localhost:9000/AllPost/${id}`).then((response) => {
+      // Fetch the post data to add the comment
+      const response = await axios.get(`http://localhost:9001/AllPost/${id}`);
+
       // Update the post with the new comment
       const updatedPost = {
         ...response.data,
@@ -146,39 +154,46 @@ function Post() {
       };
 
       // Update the post on the server
-      axios
-        .put(`http://localhost:9000/AllPost/${id}`, updatedPost)
-        .then((response) => {
-          console.log("dataComment", response.data.comment);
-          setAllComment(response.data.comment);
-          getAllPosts();
-        });
-    });
-    setComment("");
+      await axios.put(`http://localhost:9001/AllPost/${id}`, updatedPost);
+
+      setComment("");
+
+      // Refresh all posts
+      await getAllPosts();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const Edit = (id, newContent) => {
-    // Update the post content when editing
-    const updatedAllPost = AllPost.map((post) => {
-      if (post.id === id) {
-        return { ...post, content: newContent };
-      }
-      return post;
-    });
-
-    setAllPost(updatedAllPost);
-
-    // Update the post on the serverNAMEF
-    axios
-      .put(`http://localhost:9000/AllPost/${id}`, {
-        ...AllPost.find((post) => post.id === id),
-        content: newContent,
-      })
-      .then((response) => {
-        console.log(response.data);
+  const Edit = async (id, newContent) => {
+    try {
+      // Update the post content when editing
+      const updatedAllPost = AllPost.map((post) => {
+        if (post.id === id) {
+          return { ...post, content: newContent };
+        }
+        return post;
       });
 
-    setShowInputPost("");
+      setAllPost(updatedAllPost);
+
+      // Update the post on the server
+      await axios.put(`http://localhost:9001/AllPost/${id}`, {
+        ...AllPost.find((post) => post.id === id),
+        content: newContent,
+      });
+
+      setEditingPostId(false);
+      setEditing(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const cancelEdit = () => {
+    setEditingPostId(false);
+    setEditing(false);
+    setnewUpdatePost(""); // Reset the updated post content
   };
 
   return (
@@ -226,30 +241,48 @@ function Post() {
                   <>
                     <div className="Icon-mange">
                       <i
-                        class="fa-solid fa-trash"
+                        className="fa-solid fa-trash"
                         onClick={() => Delete(post.id)}
                       ></i>
 
-                      <i class="fas fa-edit" onClick={() => show(post.id)}></i>
+                      <i
+                        className="fas fa-edit"
+                        onClick={() => {
+                          setEditingPostId(post.id);
+                          setnewUpdatePost(post.content);
+                          setEditing(true);
+                        }}
+                      ></i>
                     </div>
                   </>
                 )}
-                {showInputPost === post.id && (
+                {editingPostId === post.id ? (
                   <>
                     <div className="edit-post-mange">
-                      <input type="text" onChange={getValuePost} />
-                      <button onClick={() => Edit(post.id, updatenewPost)}>
-                        Add
-                      </button>
-                      <i class="fa-solid fa-message-plus"></i>
+                      <i className="fa-solid fa-message-plus"></i>
                     </div>
                   </>
+                ) : (
+                  <div>
+                    <span>{post.date}</span>
+                  </div>
                 )}
-                <div>
-                  <span>{post.date}</span>
-                </div>
               </div>
-              <p>{post.content}</p>
+              {editingPostId === post.id ? (
+                <div className="inputandiconedit">
+                  <textarea
+                    className="EditInput"
+                    value={updatenewPost}
+                    onChange={getValuePost}
+                  ></textarea>
+                  <button onClick={() => Edit(post.id, updatenewPost)}>
+                    Add
+                  </button>
+                  <button onClick={cancelEdit}>Cancel</button>
+                </div>
+              ) : (
+                <p>{post.content}</p>
+              )}
 
               {post.comment.map((comment) => {
                 return (
@@ -258,6 +291,7 @@ function Post() {
                       content={comment.content}
                       name={comment.user}
                       image={comment.image}
+                      date={comment.date}
                     />
                   </>
                 );
@@ -268,7 +302,6 @@ function Post() {
                   placeholder="Comment"
                   onChange={getVcomment}
                 />
-
                 <BiSolidCommentAdd onClick={() => AddComment(post.id)} />
               </div>
             </div>

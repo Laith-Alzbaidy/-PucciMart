@@ -2,13 +2,29 @@ import Logo from "../../Imges/Logo.png";
 import "./Navbar.css";
 import { Link, useParams } from "react-router-dom";
 import Context from "../Context/Context";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
+import axios from "axios";
 function Nav() {
   const { GetCurentId } = useContext(Context);
   const [toggle, setToggle] = useState(false);
+  const [cart, setcart] = useState([]);
   const userId = GetCurentId();
   const params = useParams();
+
+  const getUser = () => {
+    // Fetch user data based on the user ID
+    axios.get(`http://localhost:9001/Users/${userId}`).then((response) => {
+      // const cartData = response.data.cart || []; // Set an empty array if cart is undefined
+      setcart(response.data.cart);
+
+      console.log(response.data.cart);
+    });
+  };
+
+  useEffect(() => {
+    getUser();
+  }, [cart]);
 
   const toogleBurger = () => {
     setToggle(!toggle);
@@ -73,11 +89,11 @@ function Nav() {
           <HashLink onClick={() => setToggle(false)} to={goToServices()}>
             <li>Services</li>
           </HashLink>
-          <HashLink onClick={() => setToggle(false)} to={goToProduct()}>
-            <li>Product</li>
-          </HashLink>
           <HashLink onClick={() => setToggle(false)} to={goToAbout()}>
             <li>About Us</li>
+          </HashLink>
+          <HashLink onClick={() => setToggle(false)} to={goToProduct()}>
+            <li>Product</li>
           </HashLink>
           {userId >= 1 ? (
             <>
@@ -88,7 +104,13 @@ function Nav() {
                 <li>EditProfile</li>
               </Link>
               <Link onClick={() => setToggle(false)} to={`${userId}/Cart`}>
-                <li>Cart</li>
+                <li>
+                  <i id="icon-cart" class="fa-solid fa-cart-shopping">
+                    <span className="length-cart">
+                      {cart !== undefined ? cart.length : 0}
+                    </span>
+                  </i>
+                </li>
               </Link>
               <Link onClick={() => setToggle(false)} to={`${userId}/History`}>
                 <li>History</li>
